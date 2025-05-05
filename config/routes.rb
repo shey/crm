@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [
     :index, :show, :create, :update, :destroy
   ]
+
+  # special search by tag for contacts
+  get "contacts/tag/:tag", to: "contacts#by_tag"
 end

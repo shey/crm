@@ -1,7 +1,7 @@
 Contact.create!(
   name: "Andrew Stevens",
   email: "andrew@company.com",
-  tags: %w[Lead HighValue Finalized]
+  tags: %w[lead HighValue finalized]
 )
 
 Contact.create!(
@@ -13,5 +13,5 @@ Contact.create!(
 Contact.create!(
   name: "Cathy Smith",
   email: "cathy@lycos.com",
-  tags: %w[Churned Finalized RealEstate]
+  tags: %w[Churned finalized RealEstate]
 )

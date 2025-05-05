@@ -60,6 +60,12 @@ curl -X POST http://localhost:3000/contacts \
   }'
 ```
 
+### Search (by_tag)
+
+```bash
+curl http://localhost:3000/contacts/tag/finalized
+```
+
 ## Notes
 
 1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.

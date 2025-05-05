@@ -27,6 +27,13 @@ class ContactsController < ApplicationController
     end
   end
 
+  def by_tag
+    contacts = Contact.with_tag(search_tag)
+    render json: ContactSerializer.new(
+      contacts
+    ).serializable_hash.to_json
+  end
+
   def update
   end
 
@@ -36,6 +43,10 @@ class ContactsController < ApplicationController
   end
 
   private
+
+  def search_tag
+    params[:tag].downcase
+  end
 
   def contact_params
     params.require(:contact).permit(:name, :email, tags: [])
