@@ -63,7 +63,7 @@ curl -X POST http://localhost:3000/contacts \
 ### Update (patch/put)
 
 ```bash
-curl -X PATCH http://localhost:3000/contacts/2 \
+curl -X PATCH http://localhost:3000/contacts/7 \
   -H "Content-Type: application/json" \
   -d '{
     "contact": {
@@ -75,7 +75,7 @@ curl -X PATCH http://localhost:3000/contacts/2 \
 ### Search (by_tag)
 
 ```bash
-curl http://localhost:3000/contacts/tag/finalized
+curl http://localhost:3000/contacts/tag/finalized | jq
 ```
 
 ## Notes
