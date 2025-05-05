@@ -87,3 +87,5 @@ curl http://localhost:3000/contacts/tag/finalized | jq
 1. Using yabeda-rails to expose metrics for grafana/prometheus.
 
 1. If I had more time, I’d integrate the hashid-rails gem to so numeric IDs aren't shared in the API responses.
+
+1. Metrics are exposed at /i/metrics to separate internal infrastructure endpoints from the public API
