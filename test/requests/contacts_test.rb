@@ -15,4 +15,12 @@ class ContactsTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_includes @response.body, contact.email
   end
+
+  test "GET /contacts/tag/:tag returns tagged contacts" do
+    search_tag = "churned"
+    get "/contacts/tag/#{search_tag}", as: :json
+
+    assert_response :success
+    assert_match "data", @response.body
+  end
 end
