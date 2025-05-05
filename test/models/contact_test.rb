@@ -15,4 +15,13 @@ class ContactTest < ActiveSupport::TestCase
     assert_not duplicate.valid?
     assert_includes duplicate.errors[:email], "has already been taken"
   end
+
+  test "should normalize tags before save" do
+    contact = Contact.create!(
+      name: "Test User",
+      email: "test@example.com",
+      tags: [" Lead ", "lead", "FINALIZED", nil]
+    )
+    assert_equal ["finalized", "lead"], contact.tags.sort
+  end
 end
