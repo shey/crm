@@ -21,3 +21,5 @@ bin/dev
 A contact has an email address and multiple tags associated with it.
 
 ### Development Notes
+
+1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
