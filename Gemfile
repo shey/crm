@@ -16,3 +16,8 @@ end
 
 # for ember/openapi
 gem "jsonapi-serializer"
+
+# metrics
+gem "yabeda"
+gem "yabeda-rails"
+gem "yabeda-prometheus"

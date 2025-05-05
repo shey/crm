@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # special search by tag for contacts
   get "contacts/tag/:tag", to: "contacts#by_tag"
+
+  # TODO: protect with basic auth, or something similar
+  mount Yabeda::Prometheus::Exporter => "/i/metrics"
 end
