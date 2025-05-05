@@ -16,6 +16,15 @@ class ContactsController < ApplicationController
   end
 
   def create
+    contact = Contact.new(contact_params)
+
+    if contact.save
+      render json: ContactSerializer.new(
+        contact
+      ).serializable_hash.to_json, status: :created
+    else
+      render json: {errors: contact.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -27,6 +36,10 @@ class ContactsController < ApplicationController
   end
 
   private
+
+  def contact_params
+    params.require(:contact).permit(:name, :email, tags: [])
+  end
 
   def set_contact
     @contact = Contact.find_by(id: params[:id])

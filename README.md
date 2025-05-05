@@ -46,6 +46,20 @@ curl localhost:3000/contacts/1  | jq
 curl -X DELETE http://localhost:3000/contacts/1
 ```
 
+### Create Action
+
+```bash
+curl -X POST http://localhost:3000/contacts \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contact": {
+      "name": "Shey Sewani",
+      "email": "shey@shey.ca",
+      "tags": ["lead", "priority", "finalized"]
+    }
+  }'
+```
+
 ## Notes
 
 1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
@@ -53,7 +67,3 @@ curl -X DELETE http://localhost:3000/contacts/1
 1. Using jsonapi-serializer to produce standardized JSON:API responses which are easier for FE clients to consume.
 
 1. If I had more time, I’d integrate the hashid-rails gem to so numeric IDs aren't shared in the API responses.
-
-```
-
-```
