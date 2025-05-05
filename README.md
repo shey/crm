@@ -14,6 +14,12 @@ To start the app
 bin/dev
 ```
 
+The app comes with some seed data. To plant the seeds, run:
+
+```bash
+bin/rails db:seed
+```
+
 ## Application Features
 
 ### Contacts
