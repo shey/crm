@@ -1,5 +1,12 @@
 class Contact < ApplicationRecord
   ##################################################
+  ## Scope
+  ##################################################
+  scope :with_tag, ->(tag) {
+    where("tags @> ARRAY[?]::varchar[]", [tag.to_s.downcase])
+  }
+
+  ##################################################
   ## Validations
   ##################################################
   validates :email, presence: true, uniqueness: true

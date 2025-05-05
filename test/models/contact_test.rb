@@ -24,4 +24,12 @@ class ContactTest < ActiveSupport::TestCase
     )
     assert_equal ["finalized", "lead"], contact.tags
   end
+
+  test "should find contacts by tag" do
+    contacts = Contact.with_tag("finalized")
+
+    assert_equal 2, contacts.count
+    assert_includes contacts, contacts(:cathy)
+    assert_includes contacts, contacts(:andrew)
+  end
 end

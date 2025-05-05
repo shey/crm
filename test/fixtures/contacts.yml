@@ -1,0 +1,23 @@
+andrew:
+  name: Andrew Stevens
+  email: andrew@company.com
+  tags:
+    - lead
+    - highvalue
+    - finalized
+
+bob:
+  name: Bob Rodriguez
+  email: bob@yahoo.com
+  tags:
+    - lead
+    - stage2
+    - lowvalue
+
+cathy:
+  name: Cathy Smith
+  email: cathy@lycos.com
+  tags:
+    - churned
+    - finalized
+    - realestate
