@@ -6,6 +6,10 @@ default: &default
 development:
   <<: *default
   database: crm_development
+  # connection timeout
+  timeout: 5000
+  variables:
+    statement_timeout: "20s"
 
 test:
   <<: *default
