@@ -13,3 +13,6 @@ group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "standard"
 end
+
+# for ember/openapi
+gem "jsonapi-serializer"
