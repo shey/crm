@@ -26,7 +26,59 @@ bin/rails db:seed
 
 A contact has an email address and multiple tags associated with it.
 
-### Development Notes
+## Manual Testing
+
+### Index action
+
+```bash
+ curl localhost:3000/contacts | jq
+```
+
+### Get Action
+
+```bash
+curl localhost:3000/contacts/1  | jq
+```
+
+### Destroy Action
+
+```bash
+curl -X DELETE http://localhost:3000/contacts/1
+```
+
+### Create Action
+
+```bash
+curl -X POST http://localhost:3000/contacts \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contact": {
+      "name": "Shey Sewani",
+      "email": "shey@shey.ca",
+      "tags": ["lead", "priority", "finalized"]
+    }
+  }'
+```
+
+### Update (patch/put)
+
+```bash
+curl -X PATCH http://localhost:3000/contacts/7 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contact": {
+      "tags": ["updated", "important"]
+    }
+  }'
+```
+
+### Search (by_tag)
+
+```bash
+curl http://localhost:3000/contacts/tag/finalized | jq
+```
+
+## Notes
 
 1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
 
