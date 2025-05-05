@@ -60,6 +60,18 @@ curl -X POST http://localhost:3000/contacts \
   }'
 ```
 
+### Update (patch/put)
+
+```bash
+curl -X PATCH http://localhost:3000/contacts/2 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contact": {
+      "tags": ["updated", "important"]
+    }
+  }'
+```
+
 ### Search (by_tag)
 
 ```bash

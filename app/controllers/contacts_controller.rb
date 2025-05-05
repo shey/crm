@@ -35,6 +35,11 @@ class ContactsController < ApplicationController
   end
 
   def update
+    if @contact.update(contact_params)
+      render json: ContactSerializer.new(@contact).serializable_hash.to_json
+    else
+      render json: {errors: @contact.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 
   def destroy
