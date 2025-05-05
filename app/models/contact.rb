@@ -18,5 +18,6 @@ class Contact < ApplicationRecord
       .map(&:strip)
       .map(&:downcase)
       .uniq
+      .sort
   end
 end

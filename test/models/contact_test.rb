@@ -19,9 +19,9 @@ class ContactTest < ActiveSupport::TestCase
   test "should normalize tags before save" do
     contact = Contact.create!(
       name: "Test User",
-      email: "test@example.com",
+      email: "hi@localhost.local",
       tags: [" Lead ", "lead", "FINALIZED", nil]
     )
-    assert_equal ["finalized", "lead"], contact.tags.sort
+    assert_equal ["finalized", "lead"], contact.tags
   end
 end
