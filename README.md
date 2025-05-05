@@ -2,7 +2,7 @@
 
 Built using **Rails 8.0.2** and **Ruby 3.4.3** and **PostgreSQL 15.12**
 
-## Getting started
+## 🚀 Getting Started
 
 To create the database and install any dependencies.
 
@@ -24,9 +24,13 @@ bin/rails db:seed
 
 ## Application Features
 
-### Contacts
+### 📇 Contacts
 
-A contact has an email address and multiple tags associated with it.
+Each contact includes:
+
+1. An email address
+
+1. A flexible set of tags
 
 ## Manual Endpoint testing (and documentation)
 
@@ -80,7 +84,7 @@ curl -X PATCH http://localhost:3000/contacts/7 \
 curl http://localhost:3000/contacts/tag/finalized | jq
 ```
 
-## Notes
+## 📝 Notes
 
 1. I spent ~30 minutes planning the architecture and approach before starting.
 
