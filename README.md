@@ -1,8 +1,10 @@
 # crm
 
+Built using **Rails 8.0.2** and **Ruby 3.4.3** and **PostgreSQL 15.12**
+
 ## Getting started
 
-To create the database and install any dependencies
+To create the database and install any dependencies.
 
 ```bash
 bin/setup
@@ -26,7 +28,7 @@ bin/rails db:seed
 
 A contact has an email address and multiple tags associated with it.
 
-## Manual Testing
+## Manual Endpoint testing (and documentation)
 
 ### Index action
 
@@ -80,12 +82,24 @@ curl http://localhost:3000/contacts/tag/finalized | jq
 
 ## Notes
 
-1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
+1. I spent ~30 minutes planning the architecture and approach before starting.
 
-1. Using jsonapi-serializer to produce standardized JSON:API responses which are easier for FE clients to consume.
+1. Development time was approximately 90 minutes.
 
-1. Using yabeda-rails to expose metrics for grafana/prometheus.
+1. database.yml includes connection timeout settings to protect the database—these would ideally be tuned per environment in production.
 
-1. If I had more time, I’d integrate the hashid-rails gem to so numeric IDs aren't shared in the API responses.
+1. Using jsonapi-serializer to produce standardized JSON:API responses that are easier for frontend clients to consume.
 
-1. Metrics are exposed at /i/metrics to separate internal infrastructure endpoints from the public API
+1. Using yabeda-rails to expose metrics for Prometheus/Grafana.
+
+1. Metrics are exposed at /i/metrics to separate internal infrastructure endpoints from the public API.
+
+1. Skipped `kamal` and Dockerization to simplify development.
+
+1. Excluded frontend libraries and js entirely to stay focused. If I had the need I would use `esbuild` for asset bundling.
+
+## If I had more time, I’d:
+
+1. Integrate hashid-rails to avoid exposing ids in api responses.
+
+1. Use Swagger tooling to generate API docs.
