@@ -14,4 +14,10 @@ To start the app
 bin/dev
 ```
 
+## Application Features
+
+### Contacts
+
+A contact has an email address and multiple tags associated with it.
+
 ### Development Notes
