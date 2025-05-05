@@ -10,6 +10,9 @@ class ContactsController < ApplicationController
   end
 
   def show
+    render json: ContactSerializer.new(
+      @contact
+    ).serializable_hash.to_json
   end
 
   def create
@@ -19,5 +22,14 @@ class ContactsController < ApplicationController
   end
 
   def destroy
+    @contact.destroy
+    head :no_content
+  end
+
+  private
+
+  def set_contact
+    @contact = Contact.find_by(id: params[:id])
+    render json: {error: "Contact not found"}, status: :not_found unless @contact
   end
 end

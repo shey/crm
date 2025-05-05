@@ -36,6 +36,16 @@ A contact has an email address and multiple tags associated with it.
 
 ### Get Action
 
+```bash
+curl localhost:3000/contacts/1  | jq
+```
+
+### Destroy Action
+
+```bash
+curl -X DELETE http://localhost:3000/contacts/1
+```
+
 ## Notes
 
 1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
