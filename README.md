@@ -31,3 +31,5 @@ A contact has an email address and multiple tags associated with it.
 1. database.yml has connection timeout settings to protect the database, ideally settings are used in a production env.
 
 1. Using jsonapi-serializer to produce standardized JSON:API responses which are easier for FE clients to consume.
+
+1. If I had more time, I’d integrate the hashid-rails gem to so numeric IDs aren't shared in the API responses.
